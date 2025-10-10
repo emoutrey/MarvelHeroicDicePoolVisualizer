@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Dice from './Dice'
+import ProbabilityChart from './Chart'
 
 function App() {
   const [d4, setd4] = useState(0)
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <>
+      {/* TODO: Make these pictures of dice or something, buttons are just placeholders */}
       <div>
         <Dice diceLabel="Add d4" diceFunction={() => setd4(d4 + 1)} />
         <Dice diceLabel="Add d6" diceFunction={() => setd6(d6 + 1)} />
@@ -37,6 +39,7 @@ function App() {
         d10 is {d10}&nbsp;
         d12 is {d12}
       </div>
+      <ProbabilityChart label="Probability Chart Placeholder" />
     </>
   )
 }
