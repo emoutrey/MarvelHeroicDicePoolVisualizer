@@ -8,6 +8,11 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import { options, dataTake2, dataTake3 } from './chartConfiguration';
+
+interface Props {
+    take2: boolean;
+}
 
 ChartJS.register(
   CategoryScale,
@@ -18,36 +23,12 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
-    responsive: true,
-    scales: {
-        y: {
-            beginAtZero: true
-        }
-    }
-};
-
-export const data = {
-    labels: [1, 2, 3],
-    datasets: [{
-        label: 'Percent Chance of Meeting Threshold',
-        data: [],
-        borderWidth: 1,
-        borderColor: '#B2BEB5',
-        backgroundColor: '#B2BEB5',
-    }]
-}
-
-interface Props {
-    label: string;
-}
-
 function ProbabilityChart(props: Props) {
-    const {label} = props;
+    const {take2} = props;
     return (
         <>
-            <div>{label}</div>
-            <Bar options={options} data={data} />
+            <div>Probability Chart</div>
+            <Bar options={options} data={take2 ? dataTake2 : dataTake3} />
         </>
     )
 }

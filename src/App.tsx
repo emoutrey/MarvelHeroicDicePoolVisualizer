@@ -9,6 +9,7 @@ function App() {
   const [d8, setd8] = useState(0)
   const [d10, setd10] = useState(0)
   const [d12, setd12] = useState(0)
+  const [take2, setTake2] = useState(true)
 
   return (
     <>
@@ -31,6 +32,8 @@ function App() {
         <Dice diceLabel="Reset d8" diceFunction={() => setd8(0)} />
         <Dice diceLabel="Reset d10" diceFunction={() => setd10(0)} />
         <Dice diceLabel="Reset d12" diceFunction={() => setd12(0)} />
+        <br/>
+        <button onClick={() => setTake2(!take2)}>{take2 ? 'Take 2' : 'Take 3'}</button>
       </div>
       <div className="card">
         d4 is {d4}&nbsp;
@@ -39,7 +42,7 @@ function App() {
         d10 is {d10}&nbsp;
         d12 is {d12}
       </div>
-      <ProbabilityChart label="Probability Chart Placeholder" />
+      <ProbabilityChart take2={take2} />
     </>
   )
 }
