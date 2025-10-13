@@ -17,7 +17,7 @@ function DicePool(props: Props) {
     const {d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12} = props;
 
     const totalDice = d4 + d6 + d8 + d10 + d12;
-    //for performance reasons
+    //capped for performance reasons
     //if I can make the permutation map generate faster I can raise this higher
     const maxDice = 6;
 
