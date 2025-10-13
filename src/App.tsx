@@ -23,13 +23,6 @@ function App() {
         />
         <button onClick={() => setTake2(!take2)}>{take2 ? 'Taking 2' : 'Taking 3'}</button>
       </div>
-      <div className="card">
-        d4 is {d4}&nbsp;
-        d6 is {d6}&nbsp;
-        d8 is {d8}&nbsp;
-        d10 is {d10}&nbsp;
-        d12 is {d12}
-      </div>
       <ProbabilityChart d4={d4} d6={d6} d8={d8} d10={d10} d12={d12} take2={take2} />
     </>
   )
