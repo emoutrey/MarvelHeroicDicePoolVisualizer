@@ -1,5 +1,5 @@
 //for performance reasons, iterate over the array only once
-function take2Dice(arr: number[]) {
+export function take2Dice(arr: number[]) {
 	var takenDie1 = 0;
 	var takenDie2 = 0;
 	
@@ -18,7 +18,7 @@ function take2Dice(arr: number[]) {
 }
 
 //for performance reasons, iterate over the array only once
-function take3Dice(arr: number[]) {
+export function take3Dice(arr: number[]) {
 	var takenDie1 = 0;
 	var takenDie2 = 0;
 	var takenDie3 = 0;
@@ -45,7 +45,7 @@ function take3Dice(arr: number[]) {
 //represent the probability map as an array of arrays
 //each subarray is a list of all possibilies of an individual roll
 //the superarray is therefore a list of all possibilities of all rolls
-function generatePermutationMap(d4: number, d6: number, d8: number, d10: number, d12: number) {
+export function generatePermutationMap(d4: number, d6: number, d8: number, d10: number, d12: number) {
 	const d4Array = [[1], [2], [3], [4]];
 	const d6Array = [[1], [2], [3], [4], [5], [6]];
 	const d8Array = [[1], [2], [3], [4], [5], [6], [7], [8]];
@@ -84,5 +84,4 @@ function getAllPermutations(arr1: number[][], arr2: number[][]) {
 }
 
 //need this somewhere
-	// const permMap = generatePermutationMap(d4, d6, d8, d10, d12);
-	// const dataValues = generateResultRange().map(r => permMap.filter(p => (take2 ? take2Dice(p) : take3Dice(p)) >= r).length / permMap.length * 100);
+	

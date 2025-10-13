@@ -18,10 +18,10 @@ export const options = {
     }
 };
 
-export const dataset = [{
+export const dataset = {
     label: 'Percent Chance of Meeting Threshold',
     data: [],
     borderWidth: 1,
     borderColor: '#B2BEB5',
     backgroundColor: '#B2BEB5',
-}];
+};

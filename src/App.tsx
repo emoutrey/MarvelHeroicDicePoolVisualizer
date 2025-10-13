@@ -12,7 +12,7 @@ function App() {
   
   const [take2, setTake2] = useState(true)
 
-  const maxDice = 7;
+  const maxDice = 6;
 
   return (
     <>
@@ -45,7 +45,7 @@ function App() {
         d10 is {d10}&nbsp;
         d12 is {d12}
       </div>
-      <ProbabilityChart take2={take2} />
+      <ProbabilityChart d4={d4} d6={d6} d8={d8} d10={d10} d12={d12} take2={take2} />
     </>
   )
 }
