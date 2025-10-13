@@ -35,6 +35,7 @@ function ProbabilityChart(props: Props) {
     const resultRange = generateResultRange(take2 ? 2 : 3);
 
     //memoize this
+    //and make it more readable
     const permMap = generatePermutationMap(d4, d6, d8, d10, d12);
 	const dataValues = generateResultRange(take2 ? 2 : 3).map(r => permMap.filter(p => (take2 ? take2Dice(p) : take3Dice(p)) >= r).length / permMap.length * 100);
 

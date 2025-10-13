@@ -1,41 +1,26 @@
 import { useState } from 'react'
 import './App.css'
-import Dice from './Dice'
+import DicePool from './DicePool'
 import ProbabilityChart from './Chart'
 
 function App() {
-  const [d4, setd4] = useState(0)
-  const [d6, setd6] = useState(0)
-  const [d8, setd8] = useState(0)
-  const [d10, setd10] = useState(0)
-  const [d12, setd12] = useState(0)
-  
+  const [d4, setD4] = useState(0)
+  const [d6, setD6] = useState(0)
+  const [d8, setD8] = useState(0)
+  const [d10, setD10] = useState(0)
+  const [d12, setD12] = useState(0)
   const [take2, setTake2] = useState(true)
-
-  const maxDice = 6;
 
   return (
     <>
-      {/* TODO: Make these pictures of dice or something, buttons are just placeholders */}
       <div>
-        <Dice diceLabel="Add d4" diceFunction={() => setd4((d4 + d6 + d8 + d10 + d12) < maxDice ? d4 + 1 : d4)} />
-        <Dice diceLabel="Add d6" diceFunction={() => setd6((d4 + d6 + d8 + d10 + d12) < maxDice ? d6 + 1 : d6)} />
-        <Dice diceLabel="Add d8" diceFunction={() => setd8((d4 + d6 + d8 + d10 + d12) < maxDice ? d8 + 1 : d8)} />
-        <Dice diceLabel="Add d10" diceFunction={() => setd10((d4 + d6 + d8 + d10 + d12) < maxDice ? d10 + 1 : d10)} />
-        <Dice diceLabel="Add d12" diceFunction={() => setd12((d4 + d6 + d8 + d10 + d12) < maxDice ? d12 + 1 : d12)} />
-        <br/>
-        <Dice diceLabel="Remove d4" diceFunction={() => setd4(d4 > 0 ? d4 - 1 : d4)} />
-        <Dice diceLabel="Remove d6" diceFunction={() => setd6(d6 > 0 ? d6 - 1 : d6)} />
-        <Dice diceLabel="Remove d8" diceFunction={() => setd8(d8 > 0 ? d8 - 1 : d8)} />
-        <Dice diceLabel="Remove d10" diceFunction={() => setd10(d10 > 0 ? d10 - 1 : d10)} />
-        <Dice diceLabel="Remove d12" diceFunction={() => setd12(d12 > 0 ? d12 - 1 : d12)} />
-        <br/>
-        <Dice diceLabel="Reset d4" diceFunction={() => setd4(0)} />
-        <Dice diceLabel="Reset d6" diceFunction={() => setd6(0)} />
-        <Dice diceLabel="Reset d8" diceFunction={() => setd8(0)} />
-        <Dice diceLabel="Reset d10" diceFunction={() => setd10(0)} />
-        <Dice diceLabel="Reset d12" diceFunction={() => setd12(0)} />
-        <br/>
+        <DicePool
+          d4={d4} setD4={setD4}
+          d6={d6} setD6={setD6}
+          d8={d8} setD8={setD8}
+          d10={d10} setD10={setD10}
+          d12={d12} setD12={setD12}
+        />
         <button onClick={() => setTake2(!take2)}>{take2 ? 'Taking 2' : 'Taking 3'}</button>
       </div>
       <div className="card">
