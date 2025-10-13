@@ -9,17 +9,20 @@ function App() {
   const [d8, setd8] = useState(0)
   const [d10, setd10] = useState(0)
   const [d12, setd12] = useState(0)
+  
   const [take2, setTake2] = useState(true)
+
+  const maxDice = 7;
 
   return (
     <>
       {/* TODO: Make these pictures of dice or something, buttons are just placeholders */}
       <div>
-        <Dice diceLabel="Add d4" diceFunction={() => setd4(d4 + 1)} />
-        <Dice diceLabel="Add d6" diceFunction={() => setd6(d6 + 1)} />
-        <Dice diceLabel="Add d8" diceFunction={() => setd8(d8 + 1)} />
-        <Dice diceLabel="Add d10" diceFunction={() => setd10(d10 + 1)} />
-        <Dice diceLabel="Add d12" diceFunction={() => setd12(d12 + 1)} />
+        <Dice diceLabel="Add d4" diceFunction={() => setd4((d4 + d6 + d8 + d10 + d12) < maxDice ? d4 + 1 : d4)} />
+        <Dice diceLabel="Add d6" diceFunction={() => setd6((d4 + d6 + d8 + d10 + d12) < maxDice ? d6 + 1 : d6)} />
+        <Dice diceLabel="Add d8" diceFunction={() => setd8((d4 + d6 + d8 + d10 + d12) < maxDice ? d8 + 1 : d8)} />
+        <Dice diceLabel="Add d10" diceFunction={() => setd10((d4 + d6 + d8 + d10 + d12) < maxDice ? d10 + 1 : d10)} />
+        <Dice diceLabel="Add d12" diceFunction={() => setd12((d4 + d6 + d8 + d10 + d12) < maxDice ? d12 + 1 : d12)} />
         <br/>
         <Dice diceLabel="Remove d4" diceFunction={() => setd4(d4 > 0 ? d4 - 1 : d4)} />
         <Dice diceLabel="Remove d6" diceFunction={() => setd6(d6 > 0 ? d6 - 1 : d6)} />
@@ -33,7 +36,7 @@ function App() {
         <Dice diceLabel="Reset d10" diceFunction={() => setd10(0)} />
         <Dice diceLabel="Reset d12" diceFunction={() => setd12(0)} />
         <br/>
-        <button onClick={() => setTake2(!take2)}>{take2 ? 'Take 2' : 'Take 3'}</button>
+        <button onClick={() => setTake2(!take2)}>{take2 ? 'Taking 2' : 'Taking 3'}</button>
       </div>
       <div className="card">
         d4 is {d4}&nbsp;

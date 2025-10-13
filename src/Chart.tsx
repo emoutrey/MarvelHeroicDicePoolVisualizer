@@ -8,7 +8,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { options, dataTake2, dataTake3 } from './chartConfiguration';
+import { generateResultRange, dataset, options } from './chartConfiguration';
 
 interface Props {
     take2: boolean;
@@ -25,10 +25,13 @@ ChartJS.register(
 
 function ProbabilityChart(props: Props) {
     const {take2} = props;
+
+    const resultRange = generateResultRange(take2 ? 2 : 3);
+
     return (
         <>
             <div>Probability Chart</div>
-            <Bar options={options} data={take2 ? dataTake2 : dataTake3} />
+            <Bar options={options} data={{ labels: resultRange, datasets: dataset }} />
         </>
     )
 }
