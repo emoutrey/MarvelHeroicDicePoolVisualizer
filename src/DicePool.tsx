@@ -1,20 +1,9 @@
+import { useContext } from 'react';
+import { Context } from './App';
 import Dice from './Dice'
 
-interface Props {
-    d4: number,
-    setD4: Function,
-    d6: number,
-    setD6: Function,
-    d8: number,
-    setD8: Function,
-    d10: number,
-    setD10: Function,
-    d12: number,
-    setD12: Function,
-}
-
-function DicePool(props: Props) {
-    const {d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12} = props;
+function DicePool() {
+    const {d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2} = useContext<any>(Context);
 
     const totalDice = d4 + d6 + d8 + d10 + d12;
     //capped for performance reasons
@@ -35,6 +24,9 @@ function DicePool(props: Props) {
             <Dice diceLabel="Remove d8" diceFunction={() => setD8(d8 > 0 ? d8 - 1 : d8)} />
             <Dice diceLabel="Remove d10" diceFunction={() => setD10(d10 > 0 ? d10 - 1 : d10)} />
             <Dice diceLabel="Remove d12" diceFunction={() => setD12(d12 > 0 ? d12 - 1 : d12)} />
+            <br/>
+            <button onClick={() => setTake2(!take2)}>{take2 ? 'Taking 2' : 'Taking 3'}</button>
+            <br/>
             <div className="card">
                 d4 is {d4}&nbsp;
                 d6 is {d6}&nbsp;

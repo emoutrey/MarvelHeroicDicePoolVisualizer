@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { Context } from './App';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,15 +13,6 @@ import { Bar } from 'react-chartjs-2';
 import { generateResultRange, dataset, options } from './chartConfiguration';
 import { generatePermutationMap, take2Dice, take3Dice } from './chartFunctionality';
 
-interface Props {
-    d4: number,
-    d6: number,
-    d8: number,
-    d10: number,
-    d12: number,
-    take2: boolean,
-}
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -29,8 +22,8 @@ ChartJS.register(
   Legend
 );
 
-function ProbabilityChart(props: Props) {
-    const {d4, d6, d8, d10, d12, take2} = props;
+function ProbabilityChart() {
+    const {d4, d6, d8, d10, d12, take2} = useContext<any>(Context);;
 
     const resultRange = generateResultRange(take2 ? 2 : 3);
 
