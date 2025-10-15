@@ -1,3 +1,5 @@
+import Triangle from './Triangle'
+
 interface Props {
     diceLabel: string;
     diceFunction: Function;
@@ -12,8 +14,9 @@ function Dice(props: Props) {
 
     return (
         <>
-            <div className="border-solid border-b-black border-b-8 border-x-transparent border-x-8 border-t-0"></div>
+            <Triangle direction='up' />
             <button className="bg-blue-500" onClick={handleClick}>{diceLabel}</button>
+            <Triangle direction='down' />
         </>
     )
 }
