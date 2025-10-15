@@ -11,7 +11,10 @@ function Dice(props: Props) {
     };
 
     return (
-        <button onClick={handleClick}>{diceLabel}</button>
+        <>
+            <div className="border-solid border-b-black border-b-8 border-x-transparent border-x-8 border-t-0"></div>
+            <button className="bg-blue-500" onClick={handleClick}>{diceLabel}</button>
+        </>
     )
 }
 
