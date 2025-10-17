@@ -14,11 +14,11 @@ function DicePool() {
     return (
         <div>
             <div className="flex flex-row">
-                <Dice diceLabel="Add d4" diceFunction={() => setD4(totalDice < maxDice ? d4 + 1 : d4)} />
-                <Dice diceLabel="Add d6" diceFunction={() => setD6(totalDice < maxDice ? d6 + 1 : d6)} />
-                <Dice diceLabel="Add d8" diceFunction={() => setD8(totalDice < maxDice ? d8 + 1 : d8)} />
-                <Dice diceLabel="Add d10" diceFunction={() => setD10(totalDice < maxDice ? d10 + 1 : d10)} />
-                <Dice diceLabel="Add d12" diceFunction={() => setD12(totalDice < maxDice ? d12 + 1 : d12)} />
+                <Dice die="d4" diceFunction={() => setD4(totalDice < maxDice ? d4 + 1 : d4)} />
+                <Dice die="d6" diceFunction={() => setD6(totalDice < maxDice ? d6 + 1 : d6)} />
+                <Dice die="d8" diceFunction={() => setD8(totalDice < maxDice ? d8 + 1 : d8)} />
+                <Dice die="d10" diceFunction={() => setD10(totalDice < maxDice ? d10 + 1 : d10)} />
+                <Dice die="d12" diceFunction={() => setD12(totalDice < maxDice ? d12 + 1 : d12)} />
             </div>
             <button onClick={() => setTake2(!take2)}>{take2 ? 'Taking 2' : 'Taking 3'}</button>
             <br/>
