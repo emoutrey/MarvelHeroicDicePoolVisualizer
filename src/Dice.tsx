@@ -7,21 +7,16 @@ import Triangle from './Triangle'
 
 interface Props {
     die: 'd4' | 'd6' | 'd8' | 'd10' | 'd12';
-    diceFunction: Function;
+    diceFunctionAdd: Function;
+    diceFunctionRemove: Function;
 }
 
 function Dice(props: Props) {
-    const {die, diceFunction} = props;
-
-    const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
-        diceFunction();
-    };
+    const {die, diceFunctionAdd, diceFunctionRemove} = props;
 
     return (
-        <div className="flex flex-col min-h-20 min-w-20">
-            <Triangle direction='up' />
-            {/* may break this out into its own component later */}
-            {/* not sure how much control I'll want to have yet (disabling, graying out, color, etc) */}
+        <div className="flex flex-col pr-5 pl-5">
+            <Triangle direction='up' handleClick={diceFunctionAdd} />
             {die == 'd4' ?
                 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-dice-d4" viewBox="0 0 24 24"><path d="M10.25 15.15L11.92 12.47V15.15H10.25M21.92 21H2.08C1.24 21 .72 20.08 1.16 19.36L11.08 3.13C11.5 2.44 12.5 2.44 12.92 3.13L22.84 19.36C23.28 20.08 22.76 21 21.92 21M14.29 15.15H13.43V10.42H11.91L8.75 15.41L8.82 16.36H11.92V18H13.43V16.36H14.29V15.15Z" /></svg>
             : null}
@@ -37,7 +32,7 @@ function Dice(props: Props) {
             {die == 'd12' ?
                 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-dice-d12" viewBox="0 0 24 24"><path d="M12 2L1.5 9.64L5.5 22H18.5L22.5 9.64L12 2M10.5 17H8.89V10.89L7 11.47V10.19L10.31 9H10.5V17M17 17H11.66V15.91C11.66 15.91 15.23 12.45 15.23 11.4C15.23 10.12 14.18 10.25 14.18 10.25C13.5 10.3 13 10.87 13 11.55H11.44C11.5 10.09 12.72 8.94 14.27 9C16.74 9 16.77 10.85 16.77 11.3C16.77 13.07 13.58 15.77 13.58 15.77L17 15.75V17Z" /></svg>
             : null}
-            <Triangle direction='down' />
+            <Triangle direction='down' handleClick={diceFunctionRemove} />
         </div>
     )
 }
