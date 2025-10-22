@@ -12,22 +12,22 @@ function Dice(props: Props) {
     const {die, diceFunctionAdd, diceFunctionRemove} = props;
 
     return (
-        <div className="flex flex-col pr-6 pl-6">
+        <div className="flex flex-col pr-4 pl-4">
             <Triangle direction='up' handleClick={diceFunctionAdd} />
             {die === 'd4' ?
-                <Icon path={mdiDiceD4} />
+                <Icon path={mdiDiceD4} size={4} />
             : null}
             {die === 'd6' ?
-                <Icon path={mdiDiceD6} />
+                <Icon path={mdiDiceD6} size={4} />
             : null}
             {die === 'd8' ?
-                <Icon path={mdiDiceD8} />
+                <Icon path={mdiDiceD8} size={4} />
             : null}
             {die === 'd10' ?
-                <Icon path={mdiDiceD10} />
+                <Icon path={mdiDiceD10} size={4} />
             : null}
             {die === 'd12' ?
-                <Icon path={mdiDiceD12} />
+                <Icon path={mdiDiceD12} size={4} />
             : null}
             <Triangle direction='down' handleClick={diceFunctionRemove} />
         </div>

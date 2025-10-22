@@ -10,12 +10,12 @@ function Triangle(props: Props) {
     const {direction, handleClick} = props;
 
     return (
-        <div className="cursor-pointer min-h-24 min-w-24" onClick={() => handleClick()}>
+        <div className="cursor-pointer" onClick={() => handleClick()}>
             {direction === 'up' ? (
-                <Icon path={mdiChevronUp} />
+                <Icon path={mdiChevronUp} size={4} />
             ) : null}
             {direction === 'down' ? (
-                <Icon path={mdiChevronDown} />
+                <Icon path={mdiChevronDown} size={4} />
             ) : null}
         </div>
     )
