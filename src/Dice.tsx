@@ -18,7 +18,7 @@ function Dice(props: Props) {
     };
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col min-h-20 min-w-20">
             <Triangle direction='up' />
             {/* may break this out into its own component later */}
             {/* not sure how much control I'll want to have yet (disabling, graying out, color, etc) */}

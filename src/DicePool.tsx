@@ -5,15 +5,15 @@ import Dice from './Dice'
 function DicePool() {
     const {d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2} = useContext<any>(Context);
 
+    //do I need to memoize this?
     const totalDice = d4 + d6 + d8 + d10 + d12;
     //capped for performance reasons
     //if I can make the permutation map generate faster I can raise this higher
     const maxDice = 6;
 
-    {/* TODO: Make these pictures of dice or something, buttons and labels are just placeholders */}
     return (
         <div>
-            <div className="flex flex-row">
+            <div className="flex flex-row justify-center">
                 <Dice die="d4" diceFunction={() => setD4(totalDice < maxDice ? d4 + 1 : d4)} />
                 <Dice die="d6" diceFunction={() => setD6(totalDice < maxDice ? d6 + 1 : d6)} />
                 <Dice die="d8" diceFunction={() => setD8(totalDice < maxDice ? d8 + 1 : d8)} />
