@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react'
-import './App.css'
 import DicePool from './DicePool'
 import ProbabilityChart from './ProbabilityChart'
 

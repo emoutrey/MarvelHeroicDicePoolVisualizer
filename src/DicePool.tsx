@@ -5,7 +5,7 @@ import Dice from './Dice'
 function DicePool() {
     const {d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2} = useContext<any>(Context);
 
-    //do I need to memoize this?
+    //do I need to memoize this? Probably
     const totalDice = d4 + d6 + d8 + d10 + d12;
     //capped for performance reasons
     //if I can make the permutation map generate faster I can raise this higher

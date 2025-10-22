@@ -6,6 +6,8 @@ interface Props {
     handleClick: Function;
 }
 
+//Does it make sense for this to be its own component?
+
 function Triangle(props: Props) {
     const {direction, handleClick} = props;
 
