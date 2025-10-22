@@ -40,8 +40,13 @@ function DicePool() {
                     diceFunctionRemove={() => setD12(d12 > 0 ? d12 - 1 : d12)}
                 />
             </div>
+            {/* Make this a slider? */}
             <button onClick={() => setTake2(!take2)}>{take2 ? 'Taking 2' : 'Taking 3'}</button>
             <br/>
+            {/* I can't move this into the actual image of the die */}
+            {/* I thought it would be clearer which die was which from the outline but it's just not */}
+            {/* I also can't assume that all users are savvy to that sort of thing, it should be accessible */}
+            {/* But then where do I put this?? A readout like this isn't what I want */}
             <div className="card">
                 d4 is {d4}&nbsp;
                 d6 is {d6}&nbsp;
