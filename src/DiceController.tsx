@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { Context } from './App';
-import Dice from './Dice'
+import DieController from './DieController'
 
-function DicePool() {
+function DiceController() {
     const {d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2} = useContext<any>(Context);
 
     //do I need to memoize this? Probably
@@ -14,27 +14,27 @@ function DicePool() {
     return (
         <div>
             <div className="flex flex-row justify-center">
-                <Dice
+                <DieController
                     die="d4"
                     diceFunctionAdd={() => setD4(totalDice < maxDice ? d4 + 1 : d4)}
                     diceFunctionRemove={() => setD4(d4 > 0 ? d4 - 1 : d4)}
                 />
-                <Dice
+                <DieController
                     die="d6"
                     diceFunctionAdd={() => setD6(totalDice < maxDice ? d6 + 1 : d6)}
                     diceFunctionRemove={() => setD6(d6 > 0 ? d6 - 1 : d6)}
                 />
-                <Dice
+                <DieController
                     die="d8"
                     diceFunctionAdd={() => setD8(totalDice < maxDice ? d8 + 1 : d8)}
                     diceFunctionRemove={() => setD8(d8 > 0 ? d8 - 1 : d8)}
                 />
-                <Dice
+                <DieController
                     die="d10"
                     diceFunctionAdd={() => setD10(totalDice < maxDice ? d10 + 1 : d10)}
                     diceFunctionRemove={() => setD10(d10 > 0 ? d10 - 1 : d10)}
                 />
-                <Dice
+                <DieController
                     die="d12"
                     diceFunctionAdd={() => setD12(totalDice < maxDice ? d12 + 1 : d12)}
                     diceFunctionRemove={() => setD12(d12 > 0 ? d12 - 1 : d12)}
@@ -59,4 +59,4 @@ function DicePool() {
     );
 }
 
-export default DicePool;
+export default DiceController;

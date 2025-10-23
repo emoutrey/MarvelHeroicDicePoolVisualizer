@@ -10,6 +10,7 @@ function Triangle(props: Props) {
     const {direction, handleClick} = props;
 
     return (
+        //TODO: check if this library is open source, Icon should support onClick natively
         <div className="cursor-pointer" onClick={() => handleClick()}>
             <Icon path={direction === 'up' ? mdiChevronUp : mdiChevronDown} size={4} />
         </div>

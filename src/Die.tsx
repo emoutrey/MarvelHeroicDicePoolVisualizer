@@ -8,6 +8,7 @@ interface Props {
 function Die(props: Props) {
     const {die} = props;
 
+    //since this is type safe, there's no chance this blows up
     const paths: Record<Props['die'], string> = {
         d4: mdiDiceD4,
         d6: mdiDiceD6,

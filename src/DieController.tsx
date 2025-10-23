@@ -7,7 +7,7 @@ interface Props {
     diceFunctionRemove: Function;
 }
 
-function Dice(props: Props) {
+function DieController(props: Props) {
     const {die, diceFunctionAdd, diceFunctionRemove} = props;
 
     return (
@@ -19,4 +19,4 @@ function Dice(props: Props) {
     )
 }
 
-export default Dice;
+export default DieController;
