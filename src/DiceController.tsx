@@ -3,6 +3,10 @@ import { Context } from './App';
 import DieController from './DieController'
 import DicePool from './DicePool';
 
+//I don't like calling things on the frontend 'controllers'
+//But that is what it does technically
+//When I think of something better I'll change it again
+
 function DiceController() {
     const {d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2} = useContext<any>(Context);
 
@@ -42,9 +46,13 @@ function DiceController() {
                 />
             </div>
             <div className="flex flex-row justify-between items-center">
-                <DicePool />
-                {/* Make this a slider? */}
-                <button onClick={() => setTake2(!take2)}>{take2 ? 'Taking 2' : 'Taking 3'}</button>
+                <div className="pl-10">
+                    <DicePool />
+                </div>
+                <div className="pr-10">
+                    {/* This is going to be a switch/toggle once I figure out what package to use */}
+                    <button onClick={() => setTake2(!take2)}>{take2 ? 'Taking 2' : 'Taking 3'}</button>
+                </div>
             </div>
         </div>
     );
