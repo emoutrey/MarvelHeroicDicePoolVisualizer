@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Context } from './App';
 import DieController from './DieController'
 import DicePool from './DicePool';
+import TakeSwitch from './TakeSwitch';
 
 //I don't like calling things on the frontend 'controllers'
 //But that is what it does technically
@@ -51,7 +52,8 @@ function DiceController() {
                 </div>
                 <div className="pr-10">
                     {/* This is going to be a switch/toggle once I figure out what package to use */}
-                    <button onClick={() => setTake2(!take2)}>{take2 ? 'Taking 2' : 'Taking 3'}</button>
+                    {/* <button onClick={() => setTake2(!take2)}>{take2 ? 'Taking 2' : 'Taking 3'}</button> */}
+                    <TakeSwitch />
                 </div>
             </div>
         </div>
