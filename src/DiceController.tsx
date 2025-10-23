@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Context } from './App';
 import DieController from './DieController'
+import DicePool from './DicePool';
 
 function DiceController() {
     const {d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2} = useContext<any>(Context);
@@ -40,20 +41,10 @@ function DiceController() {
                     diceFunctionRemove={() => setD12(d12 > 0 ? d12 - 1 : d12)}
                 />
             </div>
-            {/* Make this a slider? */}
-            <button onClick={() => setTake2(!take2)}>{take2 ? 'Taking 2' : 'Taking 3'}</button>
-            <br/>
-            {/* I can't move this into the actual image of the die */}
-            {/* I thought it would be clearer which die was which from the outline but it's just not */}
-            {/* I also can't assume that all users are savvy to that sort of thing, it should be accessible */}
-            {/* But then where do I put this?? A readout like this isn't what I want */}
-            {/* Need to think about screen readers too so nothing too fancy ideally */}
-            <div className="card">
-                d4 is {d4}&nbsp;
-                d6 is {d6}&nbsp;
-                d8 is {d8}&nbsp;
-                d10 is {d10}&nbsp;
-                d12 is {d12}
+            <div className="flex flex-row justify-between items-center">
+                <DicePool />
+                {/* Make this a slider? */}
+                <button onClick={() => setTake2(!take2)}>{take2 ? 'Taking 2' : 'Taking 3'}</button>
             </div>
         </div>
     );
