@@ -47,6 +47,7 @@ function DicePool() {
             {/* I thought it would be clearer which die was which from the outline but it's just not */}
             {/* I also can't assume that all users are savvy to that sort of thing, it should be accessible */}
             {/* But then where do I put this?? A readout like this isn't what I want */}
+            {/* Need to think about screen readers too so nothing too fancy ideally */}
             <div className="card">
                 d4 is {d4}&nbsp;
                 d6 is {d6}&nbsp;

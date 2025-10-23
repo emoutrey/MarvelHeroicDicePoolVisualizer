@@ -1,5 +1,4 @@
-import Icon from '@mdi/react';
-import { mdiDiceD4, mdiDiceD6, mdiDiceD8, mdiDiceD10, mdiDiceD12 } from '@mdi/js';
+import Die from './Die'
 import Triangle from './Triangle'
 
 interface Props {
@@ -14,21 +13,7 @@ function Dice(props: Props) {
     return (
         <div className="flex flex-col pr-4 pl-4">
             <Triangle direction='up' handleClick={diceFunctionAdd} />
-            {die === 'd4' ?
-                <Icon path={mdiDiceD4} size={4} />
-            : null}
-            {die === 'd6' ?
-                <Icon path={mdiDiceD6} size={4} />
-            : null}
-            {die === 'd8' ?
-                <Icon path={mdiDiceD8} size={4} />
-            : null}
-            {die === 'd10' ?
-                <Icon path={mdiDiceD10} size={4} />
-            : null}
-            {die === 'd12' ?
-                <Icon path={mdiDiceD12} size={4} />
-            : null}
+            <Die die={die} />
             <Triangle direction='down' handleClick={diceFunctionRemove} />
         </div>
     )
