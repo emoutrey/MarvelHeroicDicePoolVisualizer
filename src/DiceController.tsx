@@ -9,7 +9,7 @@ import TakeSwitch from './TakeSwitch';
 //When I think of something better I'll change it again
 
 function DiceController() {
-    const {d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2} = useContext<any>(Context);
+    const {d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12} = useContext<any>(Context);
 
     //do I need to memoize this? Probably
     const totalDice = d4 + d6 + d8 + d10 + d12;
@@ -40,19 +40,18 @@ function DiceController() {
                     diceFunctionAdd={() => setD10(totalDice < maxDice ? d10 + 1 : d10)}
                     diceFunctionRemove={() => setD10(d10 > 0 ? d10 - 1 : d10)}
                 />
+                {/* This isn't what a d12 is shaped like and it bothers me */}
                 <DieController
                     die="d12"
                     diceFunctionAdd={() => setD12(totalDice < maxDice ? d12 + 1 : d12)}
                     diceFunctionRemove={() => setD12(d12 > 0 ? d12 - 1 : d12)}
                 />
             </div>
-            <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-row justify-between items-center pt-8 pb-4">
                 <div className="pl-10">
                     <DicePool />
                 </div>
                 <div className="pr-10">
-                    {/* This is going to be a switch/toggle once I figure out what package to use */}
-                    {/* <button onClick={() => setTake2(!take2)}>{take2 ? 'Taking 2' : 'Taking 3'}</button> */}
                     <TakeSwitch />
                 </div>
             </div>
