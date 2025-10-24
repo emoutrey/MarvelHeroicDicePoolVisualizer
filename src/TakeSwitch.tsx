@@ -6,7 +6,7 @@ function TakeSwitch() {
     const {take2, setTake2} = useContext<any>(Context);
 
     return (
-        <Switch checked={take2} onChange={setTake2} />
+        <Switch checked={!take2} onChange={() => setTake2(!take2)} />
     );
 }
 
