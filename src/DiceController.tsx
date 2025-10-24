@@ -15,7 +15,7 @@ function DiceController() {
     const totalDice = d4 + d6 + d8 + d10 + d12;
     //capped for performance reasons
     //if I can make the permutation map generate faster I can raise this higher
-    const maxDice = 6;
+    const maxDice = 5;
 
     return (
         <div>
@@ -40,7 +40,6 @@ function DiceController() {
                     diceFunctionAdd={() => setD10(totalDice < maxDice ? d10 + 1 : d10)}
                     diceFunctionRemove={() => setD10(d10 > 0 ? d10 - 1 : d10)}
                 />
-                {/* This isn't what a d12 is shaped like and it bothers me */}
                 <DieController
                     die="d12"
                     diceFunctionAdd={() => setD12(totalDice < maxDice ? d12 + 1 : d12)}
@@ -48,10 +47,10 @@ function DiceController() {
                 />
             </div>
             <div className="flex flex-row justify-between items-center pt-8 pb-4">
-                <div className="pl-10">
+                <div className="pl-8">
                     <DicePool />
                 </div>
-                <div className="pr-10">
+                <div className="pr-8">
                     <Switch checked={!take2} onChange={() => setTake2(!take2)} />
                 </div>
             </div>

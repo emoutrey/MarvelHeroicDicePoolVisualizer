@@ -9,15 +9,15 @@ function DicePool() {
     return (
         <div className="flex flex-row">
             <Icon path={mdiTriangle} size={1} />
-            <div className="pr-1">{d4}</div>
+            <div className="pl-1 pr-3">{d4}</div>
             <Icon path={mdiSquare} size={1} />
-            <div className="pr-1">{d6}</div>
+            <div className="pl-1 pr-3">{d6}</div>
             <Icon path={mdiRhombus} size={1} />
-            <div className="pr-1">{d8}</div>
+            <div className="pl-1 pr-3">{d8}</div>
             <Icon path={mdiRhombus} size={1} />
-            <div className="pr-1">{d10}</div>
+            <div className="pl-1 pr-3">{d10}</div>
             <Icon path={mdiPentagon} size={1} />
-            <div className="pr-1">{d12}</div>
+            <div className="pl-1 pr-3">{d12}</div>
         </div>
     )
 }
