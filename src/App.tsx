@@ -12,9 +12,14 @@ function App() {
   const [d10, setD10] = useState(0)
   const [d12, setD12] = useState(0)
   const [take2, setTake2] = useState(true)
+  //memoize this
+  const totalDice = d4 + d6 + d8 + d10 + d12;
+  //capped for performance reasons
+  //if I can make the permutation map generate faster I can raise this higher
+  const maxDice = 5;
 
   return (
-    <Context.Provider value={{d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2}}>
+    <Context.Provider value={{d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2, totalDice, maxDice}}>
       <DiceController />
       <ProbabilityChart />
     </Context.Provider>

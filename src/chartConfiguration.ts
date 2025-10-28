@@ -2,6 +2,7 @@ import type {
     TextAlign
 } from 'chart.js';
 
+//todo use color defs from css
 const offWhite = 'rgba(255, 255, 255, 0.80)';
 const gray = '#525252'
 
