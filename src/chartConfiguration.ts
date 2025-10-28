@@ -1,5 +1,15 @@
+import type {
+    TextAlign
+} from 'chart.js';
+
+const offWhite = 'rgba(255, 255, 255, 0.80)';
+const gray = '#525252'
+
 export function generateResultRange(take: number) {
    var arr = [];
+   //going from 1 to 36 squishes the chart a bit -- probably looks even worse on mobile.
+   //I don't want to remove range values though because they are important
+   //I'll think of something
    for (var i = 1; i <= (take == 2 ? 24 : 36); i++) { arr.push(i); }
    return arr;
 }
@@ -11,19 +21,26 @@ export const options = {
         },
         tooltip: {
             displayColors: false,
-            titleAlign: 'center'
+            titleAlign: "center" as TextAlign | undefined
         }
     },
     responsive: true,
     scales: {
         x: {
             ticks: {
-                autoSkip: false
+                autoSkip: false,
+                color: offWhite
             }
         },
         y: {
-            beginAtZero: true,
-            max: 100
+            grid: {
+                display: false
+            },
+            ticks: {
+                color: offWhite
+            },
+            max: 100,
+            min: 0
         }
     }
 };
@@ -32,6 +49,6 @@ export const dataset = {
     label: 'Percent Chance of Meeting Threshold',
     data: [],
     borderWidth: 1,
-    borderColor: '#B2BEB5',
-    backgroundColor: '#B2BEB5',
+    borderColor: offWhite,
+    backgroundColor: offWhite,
 };
