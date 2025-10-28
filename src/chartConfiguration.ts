@@ -5,6 +5,15 @@ export function generateResultRange(take: number) {
 }
 
 export const options = {
+    plugins: {
+        legend: {
+            display: false
+        },
+        tooltip: {
+            displayColors: false,
+            titleAlign: 'center'
+        }
+    },
     responsive: true,
     scales: {
         x: {
@@ -13,7 +22,8 @@ export const options = {
             }
         },
         y: {
-            beginAtZero: true
+            beginAtZero: true,
+            max: 100
         }
     }
 };

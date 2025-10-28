@@ -34,7 +34,6 @@ function ProbabilityChart() {
 
     return (
         <>
-            <div>Probability Chart</div>
             <Bar options={options} data={{ labels: resultRange, datasets: [{ ...dataset, data: dataValues }] }} />
         </>
     )

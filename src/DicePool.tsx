@@ -6,6 +6,8 @@ import { mdiTriangle, mdiSquare, mdiRhombus, mdiPentagon } from '@mdi/js';
 function DicePool() {
     const {d4, d6, d8, d10, d12} = useContext<any>(Context);
 
+    // TODO: add tooltips
+
     return (
         <div className="flex flex-row">
             <Icon path={mdiTriangle} size={1} />
