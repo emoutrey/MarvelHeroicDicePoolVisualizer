@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { Context } from './App';
+import type { ContextType } from './types';
 import DieController from './DieController'
 import DicePool from './DicePool';
 import Switch from './Switch'
@@ -9,7 +10,7 @@ import Switch from './Switch'
 //When I think of something better I'll change it again
 
 function DiceController() {
-    const {d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2} = useContext<any>(Context);
+    const {d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2} = useContext<ContextType>(Context);
 
     return (
         <div>

@@ -1,10 +1,11 @@
 import Die from './Die'
 import Triangle from './Triangle'
+import type { DieType } from './types';
 
 // This one could definitely have a better name
 
 interface Props {
-    die: 'd4' | 'd6' | 'd8' | 'd10' | 'd12'; //central type def for this? it repeats
+    die: DieType;
     dieAmount: number;
     dieFunction: Function;
 }

@@ -1,9 +1,10 @@
 import { createContext, useState } from 'react'
 import DiceController from './DiceController'
 import ProbabilityChart from './ProbabilityChart'
+import type { ContextType } from './types';
+import { defaultContextObject } from './types';
 
-//make a type definition for this at some point
-export const Context = createContext<any>(null);
+export const Context = createContext<ContextType>(defaultContextObject);
 
 function App() {
   const [d4, setD4] = useState(0)

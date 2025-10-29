@@ -1,10 +1,11 @@
 import { useContext } from 'react';
 import { Context } from './App';
+import type { ContextType } from './types';
 import Icon from '@mdi/react';
 import { mdiTriangle, mdiSquare, mdiRhombus, mdiPentagon } from '@mdi/js';
 
 function DicePool() {
-    const {d4, d6, d8, d10, d12} = useContext<any>(Context);
+    const {d4, d6, d8, d10, d12} = useContext<ContextType>(Context);
 
     // TODO: add tooltips
 

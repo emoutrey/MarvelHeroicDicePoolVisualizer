@@ -1,15 +1,15 @@
+import type { DieType } from './types';
 import Icon from '@mdi/react';
 import { mdiDiceD4, mdiDiceD6, mdiDiceD8, mdiDiceD10, mdiDiceD12 } from '@mdi/js';
 
 interface Props {
-    die: 'd4' | 'd6' | 'd8' | 'd10' | 'd12';
+    die: DieType;
 }
 
 function Die(props: Props) {
     const {die} = props;
 
-    //since this is type safe, there's no chance this blows up
-    const paths: Record<Props['die'], string> = {
+    const paths: Record<DieType, string> = {
         d4: mdiDiceD4,
         d6: mdiDiceD6,
         d8: mdiDiceD8,

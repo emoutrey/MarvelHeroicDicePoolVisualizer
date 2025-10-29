@@ -1,8 +1,11 @@
 import { useContext } from 'react';
 import { Context } from './App';
+import type { ContextType } from './types';
 import Icon from '@mdi/react';
 import { mdiChevronUp, mdiChevronDown } from '@mdi/js';
 import colors from 'tailwindcss/colors'
+
+//Could name this after what it does instead of what it looks like
 
 interface Props {
     direction: 'up' | 'down'
@@ -11,7 +14,7 @@ interface Props {
 }
 
 function Triangle(props: Props) {
-    const {totalDice, maxDice} = useContext<any>(Context);
+    const {totalDice, maxDice} = useContext<ContextType>(Context);
     const {direction, dieAmount, dieFunction} = props;
 
     const handleClickUp = () => dieFunction(totalDice < maxDice ? dieAmount + 1 : dieAmount);

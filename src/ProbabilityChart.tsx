@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { Context } from './App';
+import type { ContextType } from './types';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -24,7 +25,7 @@ ChartJS.register(
 );
 
 function ProbabilityChart() {
-    const {d4, d6, d8, d10, d12, take2} = useContext<any>(Context);;
+    const {d4, d6, d8, d10, d12, take2} = useContext<ContextType>(Context);;
 
     const resultRange = generateResultRange(take2 ? 2 : 3);
 
