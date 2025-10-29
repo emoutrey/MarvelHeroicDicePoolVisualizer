@@ -3,8 +3,7 @@ import type {
 } from 'chart.js';
 import colors from 'tailwindcss/colors'
 
-const offWhite = colors.white[200];
-const gray = colors.neutral[600];
+const offWhite = colors.neutral[300];
 
 export function generateResultRange(take: number) {
    var arr = [];

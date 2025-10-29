@@ -5,23 +5,23 @@ import { mdiChevronUp, mdiChevronDown } from '@mdi/js';
 
 interface Props {
     direction: 'up' | 'down'
-    handleClick: Function;
+    dieAmount: number;
+    dieFunction: Function
 }
 
 function Triangle(props: Props) {
     const {totalDice, maxDice} = useContext<any>(Context);
+    const {direction, dieAmount, dieFunction} = props;
 
-    const {direction, handleClick} = props;
-
-    //need to make the triangle know which die its for
-    //probably need to move this up for it to work
-    const disabled = (direction === 'up' && totalDice >= maxDice) || (direction === 'down' && totalDice <= 0);
-
+    const handleClickUp = () => dieFunction(totalDice < maxDice ? dieAmount + 1 : dieAmount);
+    const handleClickDown = () => dieFunction(dieAmount > 0 ? dieAmount - 1 : dieAmount);
+    const disabled = (direction === 'up' && totalDice >= maxDice) || (direction === 'down' && dieAmount <= 0);
+    
     return (
         //TODO: check if this library is open source, Icon should support onClick natively
         //How to use Tailwind colors here?
-        <div className="cursor-pointer" onClick={() => handleClick()}>
-            <Icon path={direction === 'up' ? mdiChevronUp : mdiChevronDown} size={4} color={disabled ? "#525252" : "rgba(255, 255, 255, 0.80)"} />
+        <div className="cursor-pointer" onClick={direction === 'up' ? handleClickUp : handleClickDown}>
+            <Icon path={direction === 'up' ? mdiChevronUp : mdiChevronDown} size={4} color={disabled ? "#525252" : "#d7d7d7"} />
         </div>
     )
 }
