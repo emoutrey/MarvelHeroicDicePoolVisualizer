@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Context } from './App';
 import Icon from '@mdi/react';
 import { mdiChevronUp, mdiChevronDown } from '@mdi/js';
+import colors from 'tailwindcss/colors'
 
 interface Props {
     direction: 'up' | 'down'
@@ -19,9 +20,8 @@ function Triangle(props: Props) {
     
     return (
         //TODO: check if this library is open source, Icon should support onClick natively
-        //How to use Tailwind colors here?
         <div className="cursor-pointer" onClick={direction === 'up' ? handleClickUp : handleClickDown}>
-            <Icon path={direction === 'up' ? mdiChevronUp : mdiChevronDown} size={4} color={disabled ? "#525252" : "#d7d7d7"} />
+            <Icon path={direction === 'up' ? mdiChevronUp : mdiChevronDown} size={4} color={disabled ? colors.neutral[600] : colors.neutral[300]} />
         </div>
     )
 }
