@@ -1,10 +1,10 @@
 import type {
     TextAlign
 } from 'chart.js';
+import colors from 'tailwindcss/colors'
 
-//todo use color defs from css
-const offWhite = 'rgba(255, 255, 255, 0.80)';
-const gray = '#525252'
+const offWhite = colors.white[200];
+const gray = colors.neutral[600];
 
 export function generateResultRange(take: number) {
    var arr = [];

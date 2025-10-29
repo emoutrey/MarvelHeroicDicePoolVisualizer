@@ -13,7 +13,15 @@
   font-weight: 400;
 
   /* TODO make my own color definitions */
-  color: rgba(255, 255, 255, 0.80);
+  /* Is this the right approach with tailwind? Should this file even exist? */
+  /* I need to learn more about how to use tailwind properly */
+
+  /* I want a color scheme with three colors:
+  Text should be neutral-900
+  Enabled elements should be neutral-300
+  Disabled and background elements should be neutral-600
+  SVGs from the library inherit color so this is neutral-300 */
+  color: #d7d7d7;
   background-color: #242424;
 
   font-synthesis: none;

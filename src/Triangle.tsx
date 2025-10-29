@@ -19,6 +19,7 @@ function Triangle(props: Props) {
 
     return (
         //TODO: check if this library is open source, Icon should support onClick natively
+        //How to use Tailwind colors here?
         <div className="cursor-pointer" onClick={() => handleClick()}>
             <Icon path={direction === 'up' ? mdiChevronUp : mdiChevronDown} size={4} color={disabled ? "#525252" : "rgba(255, 255, 255, 0.80)"} />
         </div>
