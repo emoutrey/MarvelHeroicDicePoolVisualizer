@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react'
-import DiceController from './DiceController'
+import DicePool from './DicePool'
 import ProbabilityChart from './ProbabilityChart'
 import type { ContextType } from './types';
 import { defaultContextObject } from './types';
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <Context.Provider value={{d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2, totalDice, maxDice}}>
-      <DiceController />
+      <DicePool />
       <ProbabilityChart />
     </Context.Provider>
   )

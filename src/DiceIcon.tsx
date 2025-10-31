@@ -1,15 +1,15 @@
-import type { DieType } from './types';
+import type { DiceType } from './types';
 import Icon from '@mdi/react';
 import { mdiDiceD4, mdiDiceD6, mdiDiceD8, mdiDiceD10, mdiDiceD12 } from '@mdi/js';
 
 interface Props {
-    die: DieType;
+    dice: DiceType;
 }
 
-function Die(props: Props) {
-    const {die} = props;
+function DiceIcon(props: Props) {
+    const {dice} = props;
 
-    const paths: Record<DieType, string> = {
+    const paths: Record<DiceType, string> = {
         d4: mdiDiceD4,
         d6: mdiDiceD6,
         d8: mdiDiceD8,
@@ -19,9 +19,9 @@ function Die(props: Props) {
 
     return (
         <>
-            <Icon path={paths[die]} size={4} />
+            <Icon path={paths[dice]} size={4} />
         </>
     )
 }
 
-export default Die;
+export default DiceIcon;

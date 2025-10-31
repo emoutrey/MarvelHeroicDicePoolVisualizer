@@ -5,21 +5,19 @@ import Icon from '@mdi/react';
 import { mdiChevronUp, mdiChevronDown } from '@mdi/js';
 import colors from 'tailwindcss/colors'
 
-//Could name this after what it does instead of what it looks like
-
 interface Props {
     direction: 'up' | 'down'
-    dieAmount: number;
-    dieFunction: Function
+    diceAmount: number;
+    diceFunction: Function
 }
 
-function Triangle(props: Props) {
+function DiceAmountAdjuster(props: Props) {
     const {totalDice, maxDice} = useContext<ContextType>(Context);
-    const {direction, dieAmount, dieFunction} = props;
+    const {direction, diceAmount, diceFunction} = props;
 
-    const handleClickUp = () => dieFunction(totalDice < maxDice ? dieAmount + 1 : dieAmount);
-    const handleClickDown = () => dieFunction(dieAmount > 0 ? dieAmount - 1 : dieAmount);
-    const disabled = (direction === 'up' && totalDice >= maxDice) || (direction === 'down' && dieAmount <= 0);
+    const handleClickUp = () => diceFunction(totalDice < maxDice ? diceAmount + 1 : diceAmount);
+    const handleClickDown = () => diceFunction(diceAmount > 0 ? diceAmount - 1 : diceAmount);
+    const disabled = (direction === 'up' && totalDice >= maxDice) || (direction === 'down' && diceAmount <= 0);
     
     return (
         //TODO: check if this library is open source, Icon should support onClick natively
@@ -29,4 +27,4 @@ function Triangle(props: Props) {
     )
 }
 
-export default Triangle;
+export default DiceAmountAdjuster;

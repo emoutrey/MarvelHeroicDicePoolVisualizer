@@ -3,7 +3,7 @@ interface Props {
     onChange?: (checked: boolean) => void;
 }
 
-const Switch = (props: Props) => {
+const TakeSwitch = (props: Props) => {
     const { checked, onChange } = props;
 
     return (
@@ -28,4 +28,4 @@ const Switch = (props: Props) => {
     )
 }
 
-export default Switch;
+export default TakeSwitch;

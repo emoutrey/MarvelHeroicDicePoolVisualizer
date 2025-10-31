@@ -33,4 +33,4 @@ export const defaultContextObject: ContextType = {
     maxDice: 0,
 }
 
-export type DieType = 'd4' | 'd6' | 'd8' | 'd10' | 'd12';
+export type DiceType = 'd4' | 'd6' | 'd8' | 'd10' | 'd12';
