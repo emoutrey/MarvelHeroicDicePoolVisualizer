@@ -9,6 +9,7 @@ const TakeSwitch = (props: Props) => {
     return (
         <label>
             {/* For accessibility, use an underlying checkbox */}
+            {/* TODO: ARIA */}
             <input
                 type="checkbox"
                 className="hidden"
