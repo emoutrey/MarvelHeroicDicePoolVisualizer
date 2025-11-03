@@ -1,5 +1,6 @@
 import Modal from 'react-modal';
 import colors from 'tailwindcss/colors'
+import modalContent from './modalContent.json';
 
 const customStyles = {
   content: {
@@ -26,11 +27,7 @@ function NewUserModal() {
             onAfterClose={setCookie}
             contentLabel={'aria'}
         >
-            
-
-            
-            
-            
+            {Object.entries(modalContent).map(([key, value]) => (<div key={key} className="mb-4">{value}</div>))}
         </Modal>
     )
 }
