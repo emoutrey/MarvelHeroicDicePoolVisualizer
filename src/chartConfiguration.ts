@@ -27,6 +27,9 @@ export const options = {
     responsive: true,
     scales: {
         x: {
+            grid: {
+                display: false
+            },
             ticks: {
                 autoSkip: false,
                 color: offWhite

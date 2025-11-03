@@ -12,17 +12,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* TODO make my own color definitions */
-  /* Is this the right approach with tailwind? Should this file even exist? */
-  /* I need to learn more about how to use tailwind properly */
-
-  /* I want a color scheme with three colors:
-  Background should be neutral-800
-  Enabled elements should be neutral-300
-  Disabled and background elements should be neutral-600
-  SVGs from the library inherit color so this is neutral-300 */
-  color: #d7d7d7;
-  background-color: #242424;
+  @apply text-neutral-300;
+  @apply bg-neutral-800;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

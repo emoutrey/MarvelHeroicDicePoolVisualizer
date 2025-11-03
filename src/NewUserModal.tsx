@@ -23,6 +23,13 @@ function setCookie() {
 function NewUserModal() {
     const [open, setOpen] = useState(true);
 
+    // TODO:
+    // Set cookie when modal is closed and don't open on page load if cookie is set
+    // Put icon in top right to re-open modal if requested
+    // Make bottom div Fixed
+    // Style modal content (title, etc)
+    // Figure out wonkiness with modal height and button text centering
+    
     return (
         <Modal
             isOpen={open}
