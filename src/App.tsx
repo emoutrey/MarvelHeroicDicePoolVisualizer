@@ -21,11 +21,13 @@ function App() {
   const maxDice = 5;
 
   return (
-    <Context.Provider value={{d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2, totalDice, maxDice}}>
+    <>
       <NewUserModal />
-      <DicePool />
-      <ProbabilityChart />
-    </Context.Provider>
+      <Context.Provider value={{d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2, totalDice, maxDice}}>
+        <DicePool />
+        <ProbabilityChart />
+      </Context.Provider>
+    </>
   )
 }
 

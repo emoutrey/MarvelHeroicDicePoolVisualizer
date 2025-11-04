@@ -29,7 +29,6 @@ function NewUserModal() {
     // TODO:
     // Set cookie when modal is closed and don't open on page load if cookie is set
     // Put icon in top right to re-open modal if requested
-    // Style modal content (title, etc)
     
     //TODO: Modal doesn't close on overlay click
     return (
@@ -40,14 +39,14 @@ function NewUserModal() {
             contentLabel={'aria'}
             shouldCloseOnOverlayClick={true}
         >
-            <div className='h-4/5 overflow-y-auto p-5'>
-                <h1 className='mb-4'>Cortex Plus Dice Pool Visualizer</h1>
+            <div className='h-4/5 overflow-y-auto pt-5 px-5'>
+                <h1 className='mb-4 text-center text-lg'>Cortex Plus Dice Pool Visualizer</h1>
                 <p className='mb-4'>Cortex Plus is the underpinning of multiple tabletop systems, including <i>The Firefly Role-Playing Game</i> and <i>Marvel Heroic Roleplaying</i>.</p>
-                <p className='mb-4'>To perform a roll in a Cortex Plus system, you assemble your dice pool from your character's abilities, and then roll all of the dice at once. You then select either two or three of these dice, and add them together for your Result.</p>
-                <p className='mb-4'>In addition, a remaining die -- one which did not contribute to the Result -- is selected as the Effect Die for the roll. Any rolls of a one additionally generate Opportunities for your opponent, and cannot be used for either your Result or Effect Die.</p>
+                <p className='mb-4'>To perform a roll in a Cortex Plus system, you assemble your dice pool from your character's abilities, and then roll all of the dice at once. You then select either two or three of these dice, and then add them together for your Result.</p>
+                <p className='mb-4'>In addition, a remaining die -- one which did not contribute to the Result -- is selected as the Effect Die for the roll. Any die that rolls a one additionally generates an Opportunity for your opponent, and cannot be used for your Result or Effect Die.</p>
                 <p className='mb-4'>Since it's not necessarily straightforward to figure out what to expect from a dice pool during play, I created this tool to visualize average Results, Effect Dice, and Opportunity generation for a given set of rolls.</p>
-                <p className='mb-4'>I hope this tool helps you as it did me! Happy gaming!</p>
-                <p className='mb-4'>To view this window again after closing it, click the (put an icon here) icon in the top right.</p>
+                <p className='mb-4'>I hope this tool helps you as it did me. Happy gaming!</p>
+                <p className=''>To view this window again after closing it, click the (put an icon here) icon in the top right.</p>
             </div>
             <div className='h-1/5'>
                 <div className='h-full flex justify-center items-center'>
