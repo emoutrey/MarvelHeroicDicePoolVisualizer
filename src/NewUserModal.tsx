@@ -20,8 +20,13 @@ function setCookie() {
     return null;
 }
 
-function NewUserModal() {
-    const [open, setOpen] = useState(true);
+interface Props {
+    modalOpen: boolean,
+    modalSetOpenFunction: Function
+}
+
+function NewUserModal(props: Props) {
+    const { modalOpen, modalSetOpenFunction } = props;
 
     //TODO fix "React-Modal: Cannot register modal instance that's already open"
     Modal.setAppElement('#root');
@@ -33,7 +38,7 @@ function NewUserModal() {
     //TODO: Modal doesn't close on overlay click
     return (
         <Modal
-            isOpen={open}
+            isOpen={modalOpen}
             style={customStyles}
             onAfterClose={setCookie}
             contentLabel={'aria'}
@@ -50,7 +55,7 @@ function NewUserModal() {
             </div>
             <div className='h-1/5'>
                 <div className='h-full flex justify-center items-center'>
-                    <button className='border rounded-xl border-neutral-600 hover:border-neutral-300 transition-colors duration-250 px-4 py-2 active:scale-95' onClick={() => setOpen(false)}>
+                    <button className='border rounded-xl border-neutral-600 hover:border-neutral-300 transition-colors duration-250 px-4 py-2 active:scale-95' onClick={() => modalSetOpenFunction(false)}>
                         <span className=''>Close</span>
                     </button>
                 </div>

@@ -21,10 +21,12 @@ function App() {
   //if I can make the permutation map generate faster I can raise this higher
   const maxDice = 5;
 
+  const [modalOpen, setModalOpen] = useState(true) //read cookie here
+
   return (
     <>
-      <NewUserModal />
-      <NewUserModalOpenIcon />
+      <NewUserModal modalOpen={modalOpen} modalSetOpenFunction={setModalOpen} />
+      <NewUserModalOpenIcon modalSetOpenFunction={setModalOpen} />
       <Context.Provider value={{d4, setD4, d6, setD6, d8, setD8, d10, setD10, d12, setD12, take2, setTake2, totalDice, maxDice}}>
         <DicePool />
         <ProbabilityChart />
