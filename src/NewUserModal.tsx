@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Modal from 'react-modal';
 import colors from 'tailwindcss/colors'
 
@@ -30,10 +29,6 @@ function NewUserModal(props: Props) {
 
     //TODO fix "React-Modal: Cannot register modal instance that's already open"
     Modal.setAppElement('#root');
-
-    // TODO:
-    // Set cookie when modal is closed and don't open on page load if cookie is set
-    // Put icon in top right to re-open modal if requested
     
     //TODO: Modal doesn't close on overlay click
     return (
