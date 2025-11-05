@@ -17,8 +17,7 @@ const customStyles = {
 };
 
 function setCookie() {
-    //set a cookie to remember that the modal shouldn't open next time
-    return null;
+    localStorage.setItem('modalSeen', 'true');
 }
 
 interface Props {

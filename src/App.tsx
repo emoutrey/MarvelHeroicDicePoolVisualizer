@@ -21,7 +21,8 @@ function App() {
   //if I can make the permutation map generate faster I can raise this higher
   const maxDice = 5;
 
-  const [modalOpen, setModalOpen] = useState(true) //read cookie here
+  const modalSeen = localStorage.getItem('modalSeen');
+  const [modalOpen, setModalOpen] = useState(modalSeen == 'true' ? false : true)
 
   return (
     <>
