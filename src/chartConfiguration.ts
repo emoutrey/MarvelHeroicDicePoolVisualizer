@@ -10,6 +10,7 @@ export function generateResultRange(take: number) {
    //going from 1 to 36 squishes the chart a bit -- probably looks even worse on mobile.
    //I don't want to remove range values though because they are important
    //I'll think of something
+   //IDEA: on mobile, switch to vertical bar chart
    for (var i = 1; i <= (take == 2 ? 24 : 36); i++) { arr.push(i); }
    return arr;
 }

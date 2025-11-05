@@ -17,7 +17,7 @@ function DicePool() {
                 <Dice dice="d10" diceAmount={d10} diceFunction={setD10} />
                 <Dice dice="d12" diceAmount={d12} diceFunction={setD12} />
             </div>
-            <div className="flex flex-row justify-between items-center pt-8 pb-4">
+            <div className="flex flex-row justify-between items-center py-8">
                 <div className="pl-8">
                     <DicePoolReadout />
                 </div>

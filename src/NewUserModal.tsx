@@ -1,5 +1,7 @@
 import Modal from 'react-modal';
 import colors from 'tailwindcss/colors'
+import Icon from '@mdi/react';
+import { mdiHelpCircle } from '@mdi/js';
 
 const customStyles = {
   content: {
@@ -46,7 +48,7 @@ function NewUserModal(props: Props) {
                 <p className='mb-4'>In addition, a remaining die -- one which did not contribute to the Result -- is selected as the Effect Die for the roll. Any die that rolls a one additionally generates an Opportunity for your opponent, and cannot be used for your Result or Effect Die.</p>
                 <p className='mb-4'>Since it's not necessarily straightforward to figure out what to expect from a dice pool during play, I created this tool to visualize average Results, Effect Dice, and Opportunity generation for a given set of rolls.</p>
                 <p className='mb-4'>I hope this tool helps you as it did me. Happy gaming!</p>
-                <p className=''>To view this window again after closing it, click the (put an icon here) icon in the top right.</p>
+                <p className=''>To view this window again after closing it, click the <Icon path={mdiHelpCircle} size={0.75} className='inline align-text-top' /> icon in the top right.</p>
             </div>
             <div className='h-1/5'>
                 <div className='h-full flex justify-center items-center'>
