@@ -28,10 +28,11 @@ interface Props {
 function NewUserModal(props: Props) {
     const { modalOpen, modalSetOpenFunction } = props;
 
+    //make modal fade in and out
+
     //TODO fix "React-Modal: Cannot register modal instance that's already open"
     Modal.setAppElement('#root');
     
-    //TODO: Modal doesn't close on overlay click
     return (
         <Modal
             isOpen={modalOpen}
@@ -39,6 +40,7 @@ function NewUserModal(props: Props) {
             onAfterClose={setCookie}
             contentLabel={'aria'}
             shouldCloseOnOverlayClick={true}
+            onRequestClose={() => modalSetOpenFunction(false)}
         >
             <div className='h-4/5 overflow-y-auto pt-5 px-5'>
                 <h1 className='mb-4 text-center text-lg'>Cortex Plus Dice Pool Visualizer</h1>
@@ -52,7 +54,7 @@ function NewUserModal(props: Props) {
             <div className='h-1/5'>
                 <div className='h-full flex justify-center items-center'>
                     <button className='border rounded-xl border-neutral-600 hover:border-neutral-300 transition-colors duration-250 px-4 py-2 active:scale-95' onClick={() => modalSetOpenFunction(false)}>
-                        <span className=''>Close</span>
+                        <span>Close</span>
                     </button>
                 </div>
             </div>
