@@ -18,7 +18,8 @@ function App() {
   const totalDice = useMemo(() => d4 + d6 + d8 + d10 + d12, [d4, d6, d8, d10, d12]);
   //capped for performance reasons
   //if I can make the permutation map generate faster I can raise this higher
-  const maxDice = 6;
+  //TODO: add a loading spinner and some async logic to make higher dice pools more bearable
+  const maxDice = 5;
 
   const modalSeen = localStorage.getItem('modalSeen');
   const [modalOpen, setModalOpen] = useState(modalSeen == 'true' ? false : true)

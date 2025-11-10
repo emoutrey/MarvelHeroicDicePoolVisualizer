@@ -22,6 +22,12 @@ function ProbabilityChart() {
     //This could be more readable
 	  const dataValues = useMemo(() => generateResultRange(take2 ? 2 : 3).map(r => permMap.filter(p => (take2 ? take2Dice(p) : take3Dice(p)) >= r).length / permMap.length * 100), [totalDice, take2]);
 
+    // Testing reveals that these are triggering twice each
+    // There's an unnecessary recalculation and I'm not sure where it's coming from
+    // Need to track this down since dice pools of 6+ can take multiple seconds to generate
+    // const a = useMemo(() => console.log('recalculated based on dice'), [totalDice]);
+    // const b = useMemo(() => console.log('recalculated based on take'), [take2]);
+
     return (
         <>
             <Bar options={options} data={{ labels: resultRange, datasets: [{ ...dataset, data: dataValues }] }} />
