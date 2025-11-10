@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useMemo } from 'react'
 import NewUserModal from './NewUserModal';
 import NewUserModalOpenIcon from './NewUserModalOpenIcon';
 import DicePool from './DicePool'
@@ -15,11 +15,10 @@ function App() {
   const [d10, setD10] = useState(0)
   const [d12, setD12] = useState(0)
   const [take2, setTake2] = useState(true)
-  //memoize this
-  const totalDice = d4 + d6 + d8 + d10 + d12;
+  const totalDice = useMemo(() => d4 + d6 + d8 + d10 + d12, [d4, d6, d8, d10, d12]);
   //capped for performance reasons
   //if I can make the permutation map generate faster I can raise this higher
-  const maxDice = 5;
+  const maxDice = 6;
 
   const modalSeen = localStorage.getItem('modalSeen');
   const [modalOpen, setModalOpen] = useState(modalSeen == 'true' ? false : true)
