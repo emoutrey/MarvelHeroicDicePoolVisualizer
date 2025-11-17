@@ -20,7 +20,7 @@ function ProbabilityChart() {
     const resultRange = useMemo(() => generateResultRange(take2 ? 2 : 3), [take2]);
     const permMap = useMemo(() => generatePermutationMap(d4, d6, d8, d10, d12), [totalDice]);
     //This could be more readable
-	  const dataValues = useMemo(() => generateResultRange(take2 ? 2 : 3).map(r => permMap.filter(p => (take2 ? take2Dice(p) : take3Dice(p)) >= r).length / permMap.length * 100), [totalDice, take2]);
+	const dataValues = useMemo(() => resultRange.map(r => permMap.filter(p => (take2 ? take2Dice(p) : take3Dice(p)) >= r).length / permMap.length * 100), [totalDice, take2]);
 
     return (
         <>

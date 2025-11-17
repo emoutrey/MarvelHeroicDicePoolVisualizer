@@ -15,7 +15,7 @@ function App() {
   const [d10, setD10] = useState(0)
   const [d12, setD12] = useState(0)
   const [take2, setTake2] = useState(true)
-  const totalDice = useMemo(() => d4 + d6 + d8 + d10 + d12, [d4, d6, d8, d10, d12]);
+  const totalDice = d4 + d6 + d8 + d10 + d12;
   //capped for performance reasons
   //if I can make the permutation map generate faster I can raise this higher
   //TODO: add a loading spinner and some async logic to make higher dice pools more bearable
