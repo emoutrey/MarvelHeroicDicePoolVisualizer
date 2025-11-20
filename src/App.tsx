@@ -1,4 +1,4 @@
-import { createContext, useState, useMemo } from 'react'
+import { createContext, useState } from 'react'
 import NewUserModal from './NewUserModal';
 import NewUserModalOpenIcon from './NewUserModalOpenIcon';
 import DicePool from './DicePool'

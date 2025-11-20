@@ -5,14 +5,14 @@ interface Props {
     modalSetOpenFunction: Function
 }
 
-//This kinda overlaps with the D12 up arrow
-//I'll see how big of a deal it is when I get to mobile
 function newUserModalOpenIcon(props: Props) {
     const { modalSetOpenFunction } = props;
 
     return (
-        <div className='relative'>
-            <div className='absolute top-0 right-0 cursor-pointer' onClick={() => modalSetOpenFunction(true)}>
+        <div className='flex justify-between'>
+            {/* This div won't stick around for long hopefully */}
+            <div className="text-left">Early alpha build. Expect frequent updates!</div>
+            <div className='cursor-pointer' onClick={() => modalSetOpenFunction(true)}>
                 <Icon path={mdiHelpCircle} size={1} />
             </div>
         </div>
