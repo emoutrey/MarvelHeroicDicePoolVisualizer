@@ -1,6 +1,8 @@
 # Cortex Plus Dice Pool Visualizer
 Probability breakdowns for Cortex Plus dice pools.
 
+Hosted here: https://emoutrey.github.io/CortexPlusDicePoolVisualizer/
+
 The current version of the application is somewhat functional, but needs work still to be presentable.
 
 TODO list is as follows:
@@ -14,5 +16,3 @@ TODO list is as follows:
 - Add ARIA (currently not accessible, but designed with accessibility in mind)
 - Decide on a color scheme and add it
 - Move things into tailwind @theme
-- Host on Github Pages
-- Rename repo (logic is not specific to Marvel Heroic)
