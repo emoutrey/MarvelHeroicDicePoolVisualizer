@@ -22,7 +22,8 @@ function DiceAmountAdjuster(props: Props) {
     return (
         //TODO: check if this library is open source, Icon should support onClick natively
         <div className="cursor-pointer" onClick={direction === 'up' ? handleClickUp : handleClickDown}>
-            <Icon path={direction === 'up' ? mdiChevronUp : mdiChevronDown} size={4} color={disabled ? colors.neutral[600] : colors.neutral[300]} />
+            <Icon className="sm:hidden" path={direction === 'up' ? mdiChevronUp : mdiChevronDown} size={2} color={disabled ? colors.neutral[600] : colors.neutral[300]} />
+            <Icon className="max-sm:hidden" path={direction === 'up' ? mdiChevronUp : mdiChevronDown} size={4} color={disabled ? colors.neutral[600] : colors.neutral[300]} />
         </div>
     )
 }

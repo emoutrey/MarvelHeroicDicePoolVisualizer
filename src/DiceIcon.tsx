@@ -19,7 +19,8 @@ function DiceIcon(props: Props) {
 
     return (
         <>
-            <Icon path={paths[dice]} size={4} />
+            <Icon className="sm:hidden" path={paths[dice]} size={2} />
+            <Icon className="max-sm:hidden" path={paths[dice]} size={4} />
         </>
     )
 }

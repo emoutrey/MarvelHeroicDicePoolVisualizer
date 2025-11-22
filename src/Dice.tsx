@@ -12,7 +12,7 @@ function Dice(props: Props) {
     const {dice, diceAmount, diceFunction} = props;
 
     return (
-        <div className="flex flex-col px-6">
+        <div className="flex flex-col">
             <DiceAmountAdjuster direction='up' diceAmount={diceAmount} diceFunction={diceFunction} />
             <DiceIcon dice={dice} />
             <DiceAmountAdjuster direction='down' diceAmount={diceAmount} diceFunction={diceFunction} />

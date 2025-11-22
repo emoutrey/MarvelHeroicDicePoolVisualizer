@@ -10,18 +10,18 @@ function DicePool() {
 
     return (
         <div>
-            <div className="flex flex-row justify-center">
+            <div className="flex flex-row justify-around">
                 <Dice dice="d4" diceAmount={d4} diceFunction={setD4} />
                 <Dice dice="d6" diceAmount={d6} diceFunction={setD6} />
                 <Dice dice="d8" diceAmount={d8} diceFunction={setD8} />
                 <Dice dice="d10" diceAmount={d10} diceFunction={setD10} />
                 <Dice dice="d12" diceAmount={d12} diceFunction={setD12} />
             </div>
-            <div className="flex flex-row justify-between items-center py-8">
-                <div className="pl-8">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-8 py-8">
+                <div className="sm:pl-8">
                     <DicePoolReadout />
                 </div>
-                <div className="pr-8">
+                <div className="sm:pr-8">
                     <TakeSwitch checked={!take2} onChange={() => setTake2(!take2)} />
                 </div>
             </div>
