@@ -9,12 +9,8 @@ function newUserModalOpenIcon(props: Props) {
     const { modalSetOpenFunction } = props;
 
     return (
-        <div className='flex justify-between'>
-            {/* This div won't stick around for long hopefully */}
-            <div className="text-left">Early alpha build. Expect frequent updates!</div>
-            <div className='cursor-pointer' onClick={() => modalSetOpenFunction(true)}>
-                <Icon path={mdiHelpCircle} size={1} />
-            </div>
+        <div className='absolute top-1 right-1 cursor-pointer' onClick={() => modalSetOpenFunction(true)}>
+            <Icon path={mdiHelpCircle} size={1} />
         </div>
     )
 }
