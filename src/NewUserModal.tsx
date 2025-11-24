@@ -9,8 +9,7 @@ const customStyles = {
     },
     content: {
         backgroundColor: colors.neutral[800],
-        minWidth: '480px',
-        maxWidth: '50vw',
+        width: '80vw',
         height: '80vh',
         top: '50%',
         left: '50%',
