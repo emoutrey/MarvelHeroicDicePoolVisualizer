@@ -9,7 +9,7 @@ import {
   Tooltip,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { generateResultRange, dataset, options } from './chartConfiguration';
+import { generateResultRange, dataset, options, optionsMobile } from './chartConfiguration';
 import { generatePermutationMap, take2Dice, take3Dice } from './chartFunctionality';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
@@ -24,7 +24,12 @@ function ProbabilityChart() {
 
     return (
         <>
-            <Bar options={options} data={{ labels: resultRange, datasets: [{ ...dataset, data: dataValues }] }} />
+            <div className="sm:hidden">
+                <Bar options={optionsMobile} data={{ labels: resultRange, datasets: [{ ...dataset, data: dataValues }] }} height={600} />
+            </div>
+            <div className="max-sm:hidden">
+                <Bar options={options} data={{ labels: resultRange, datasets: [{ ...dataset, data: dataValues }] }} />
+            </div>
         </>
     )
 }

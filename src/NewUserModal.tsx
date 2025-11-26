@@ -33,6 +33,9 @@ function NewUserModal(props: Props) {
     //TODO: make modal fade in and out
     //The documented way to do this is not ideal
 
+    //Honestly I need to just find a better modal package
+    //This one doesn't work well with tailwind
+
     //TODO: fix "React-Modal: Cannot register modal instance that's already open"
     Modal.setAppElement('#root');
     
@@ -50,7 +53,7 @@ function NewUserModal(props: Props) {
                 <p className='mb-4'>Cortex Plus is the underpinning of multiple tabletop systems, including <i>The Firefly Role-Playing Game</i> and <i>Marvel Heroic Roleplaying</i>.</p>
                 <p className='mb-4'>To perform a roll in a Cortex Plus system, you assemble your dice pool from your character's abilities, and then roll all of those dice at once. You then select either two or three of these dice, and then add them together for your Result.</p>
                 <p className='mb-4'>In addition, a remaining die -- one which did not contribute to the Result -- is selected as the Effect Die for the roll. Any die that rolls a one additionally generates an Opportunity for your opponent, and cannot be used for your Result or Effect Die.</p>
-                <p className='mb-4'>Since it's not necessarily straightforward to figure out what to expect from a dice pool during play, I created this tool to visualize average Results, Effect Dice, and Opportunity generation for a given set of rolls.</p>
+                <p className='mb-4'>Since it's not straightforward to figure out what to expect from a dice pool during play, I created this tool to visualize average Results, Effect Dice, and Opportunity generation for a given set of rolls.</p>
                 <p className='mb-4'>I hope this tool helps you as it did me. Happy gaming!</p>
                 <p className=''>To view this window again after closing it, click the <Icon path={mdiHelpCircle} size={0.75} className='inline align-text-top' /> icon in the top right.</p>
             </div>

@@ -7,15 +7,12 @@ const offWhite = colors.neutral[300];
 
 export function generateResultRange(take: number) {
    var arr = [];
-   //going from 1 to 36 squishes the chart a bit -- probably looks even worse on mobile.
-   //I don't want to remove range values though because they are important
-   //I'll think of something
-   //IDEA: on mobile, switch to vertical bar chart
    for (var i = 1; i <= (take == 2 ? 24 : 36); i++) { arr.push(i); }
    return arr;
 }
 
 export const options = {
+    indexAxis: 'x' as const,
     plugins: {
         legend: {
             display: false
@@ -41,11 +38,70 @@ export const options = {
                 display: false
             },
             ticks: {
-                color: offWhite
+                color: offWhite,
+                callback: function(value: string): string {
+                    return value + '%';
+                }
+            },
+            max: 100,
+            min: 0,
+        }
+    }
+};
+
+export const optionsMobile = {
+    maintainaspectRatio: false,
+    indexAxis: 'y' as const,
+    plugins: {
+        legend: {
+            display: false
+        },
+        tooltip: {
+            displayColors: false,
+            titleAlign: "center" as TextAlign | undefined
+        }
+    },
+    responsive: true,
+    scales: {
+        x: {
+            position: 'bottom' as const,
+            grid: {
+                display: true,
+                color: offWhite,
+            },
+            ticks: {
+                autoSkip: false,
+                color: offWhite,
+                callback: function(value: string): string {
+                    return value + '%';
+                }
             },
             max: 100,
             min: 0
-        }
+        },
+        x2: {
+            position: 'top' as const,
+            grid: {
+                display: true,
+                color: offWhite,
+            },
+            ticks: {
+                color: offWhite,
+                callback: function(value: string): string {
+                    return value + '%';
+                }
+            },
+            max: 100,
+            min: 0
+        },
+        y: {
+            grid: {
+                display: false
+            },
+            ticks: {
+                color: offWhite,
+            }
+        },
     }
 };
 
