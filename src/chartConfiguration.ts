@@ -39,8 +39,8 @@ export const options = {
             },
             ticks: {
                 color: offWhite,
-                callback: function(value: string): string {
-                    return value + '%';
+                callback: function(tickValue: number | string): string {
+                    return tickValue + '%';
                 }
             },
             max: 100,
@@ -72,8 +72,8 @@ export const optionsMobile = {
             ticks: {
                 autoSkip: false,
                 color: offWhite,
-                callback: function(value: string): string {
-                    return value + '%';
+                callback: function(tickValue: number | string): string {
+                    return tickValue + '%';
                 }
             },
             max: 100,
@@ -87,8 +87,8 @@ export const optionsMobile = {
             },
             ticks: {
                 color: offWhite,
-                callback: function(value: string): string {
-                    return value + '%';
+                callback: function(tickValue: number | string): string {
+                    return tickValue + '%';
                 }
             },
             max: 100,
