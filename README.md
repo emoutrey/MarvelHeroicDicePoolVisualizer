@@ -7,12 +7,11 @@ The current version of the application is somewhat functional, but needs work st
 
 TODO list is as follows:
 
+- Replace the modal library, the current one isn't responsive or tailwind-friendly
 - Use Web Workers to multithread the permutation map generation and traversal
 - Add a loading spinner
 - Add average effect die calculation
 - Add opportunity generation calculation
-- Mobile view CSS (currently unusable on mobile, but is designed for mobile)
-- Bar chart will become vertical bar chart on mobile
-- Add ARIA (currently not accessible, but designed with accessibility in mind)
+- Add ARIA
 - Decide on a color scheme and add it
 - Move things into tailwind @theme
